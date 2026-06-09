@@ -1467,7 +1467,7 @@
         const bgMusic = document.getElementById("bgMusic");
 
         // 尝试自动播放音乐
-        function tryAutoPlay() {return ;
+        function tryAutoPlay() {
           bgMusic
             .play()
             .then(() => {
@@ -1494,7 +1494,7 @@
         // 检查本地存储的音乐设置
         const savedMusic = localStorage.getItem("music");
         if (savedMusic !== "off") {
-          tryAutoPlay();
+          //tryAutoPlay();
         } else {
           musicIcon.classList.replace("fa-volume-up", "fa-music");
         }
@@ -1511,12 +1511,6 @@
             localStorage.setItem("music", "off");
           }
         });
-
-        // 复制跑马灯内容以实现无缝循环
-        const marquee = document.querySelector(".marquee");
-        const marqueeContent = document.querySelector(".marquee-content");
-        const clone = marqueeContent.cloneNode(true);
-        marquee.appendChild(clone);
 
         // ========== 新增功能：网盘链接展开/复制/Toast提示 ==========
         const toast = document.getElementById("toast");
