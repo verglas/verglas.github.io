@@ -77,72 +77,19 @@
       }
 
       .container {
-        max-width: min(1200px, 90vw);
+        max-width: min(1200px, 95vw);
         margin: 0 auto;
         position: relative;
         padding: 20px;
         padding-top: 60px;
       }
 
-      /* 跑马灯样式 - 毛玻璃效果 - 减小高度 */
-      .marquee-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 6px 0;
-        z-index: 1000;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      }
-
-      .marquee {
-        display: inline-block;
-        white-space: nowrap;
-        animation: marquee 20s linear infinite;
-        padding-left: 100%;
-      }
-
-      .marquee-content {
-        display: inline-block;
-        margin-right: 40px;
-        color: #f5f5f5;
-        font-weight: bold;
-        font-size: 14px;
-      }
-
-      .marquee-link {
-        color: #f5f5f5;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        padding: 0 15px;
-        position: relative;
-      }
-
-      .marquee-link:hover {
-        color: #ffffff;
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-      }
-
-      @keyframes marquee {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-100%);
-        }
-      }
-
       header {
         text-align: center;
-        margin-bottom: 40px;
-        padding: 30px 0;
+        margin-bottom: 30px;
+        padding: 20px 0;
       }
 
-      /* 修改标题样式 */
       h1 {
         margin-bottom: 15px;
         font-size: clamp(2em, 6vw, 3em);
@@ -165,49 +112,16 @@
       }
 
       @keyframes gradient-shift {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
       }
 
-      .description {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: clamp(14px, 3.5vw, 18px);
-        margin-top: 10px;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      /* 移除头像的白色边框 */
-      .avatar {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        margin: 15px auto;
-        background-image: url("https://mpimg.cn/view.php/ae334360f9646127f63fc55587c591af.jpg");
-        background-size: cover;
-        background-position: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      }
-
-      .avatar:hover {
-        transform: scale(1.05);
-      }
-
-      /* 特殊链接区域 - 改进排版和样式 */
       .special-links {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 12px;
-        margin: 25px auto;
+        margin: 15px auto;
         max-width: 90%;
       }
 
@@ -226,9 +140,6 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        /* 移除毛玻璃效果 */
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
       }
 
       .special-link:hover {
@@ -238,180 +149,192 @@
         color: #fff;
       }
 
-      .special-link i {
-        margin-right: 6px;
-        font-size: 12px;
-      }
+      .special-link i { margin-right: 6px; font-size: 12px; }
 
-      /* 修改卡片间距和圆角 */
+      /* 卡片网格布局结构 */
       .bookmarks {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
-        gap: 35px;
+        grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+        gap: 25px;
         margin-top: 20px;
+        margin-bottom: 60px;
       }
 
       .bookmark {
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 30px;
-        padding: 25px;
+        background: rgba(255, 255, 255, 0.13);
+        border-radius: 20px;
+        padding: 20px;
         transition: all 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        position: relative;
-        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         display: flex;
         flex-direction: column;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
       }
 
       .bookmark:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        background: rgba(255, 255, 255, 0.25);
-        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.3);
       }
 
       .bookmark-description {
         color: #fff;
-        font-size: 18px;
+        font-size: 16px;
         margin-bottom: 15px;
-        line-height: 1.3;
         font-weight: bold;
         text-align: center;
         position: relative;
-        padding-bottom: 10px;
+        padding-bottom: 8px;
       }
 
       .bookmark-description::after {
         content: "";
         position: absolute;
         bottom: 0;
-        left: 25%;
-        width: 50%;
+        left: 30%;
+        width: 40%;
         height: 1px;
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.25);
       }
 
+      /* 子项不足时动态拉伸高度对齐 */
       .bookmark-links {
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
-        gap: 10px;
-      }
-
-      .link-row {
-        display: flex;
-        justify-content: center;
-        flex-grow: 1;
-        gap: 8px;
+        gap: 12px;
+        flex-grow: 1; 
       }
 
       .link-item {
-        flex: 1;
-        text-align: center;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        .fab {
-          margin-right: 10px;
-        }
+        flex-grow: 1; /* 让子项框均分并填满父容器的全部高度 */
       }
 
-      /* 软件名称按钮样式 */
+      /* 统一图标间距 */
+      .link-item .fab, .link-item .fas { margin-right: 6px; }
+      .fa-github { color: #fff; }
+      .fa-git-alt { color: #fe652f; }
+
+      /* 软件与渠道主按钮 */
       .app-name-btn {
-        display: block;
-        padding: 12px 8px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
         display: flex;
         align-items: center;
         justify-content: center;
-        line-height: 1.2;
-        height: 100%;
-        min-height: 45px;
+        padding: 10px 12px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        font-size: 14px;
         color: #fff;
         text-decoration: none;
         border: 1px solid rgba(255, 255, 255, 0.1);
         cursor: pointer;
+        transition: all 0.25s ease;
+        min-height: 42px;
+        flex-grow: 1; /* 让按钮自身在 link-item 中自适应高度拉伸 */
       }
 
       .app-name-btn:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.18);
         border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-1px);
       }
 
-      /* 网盘链接容器样式 */
+      /* 优化核心源点击框名称颜色（淡金色） */
+      .source-btn {
+        background: rgba(255, 193, 7, 0.1) !important;
+        border-color: rgba(255, 193, 7, 0.2) !important;
+        color: #ffe082 !important; 
+      }
+      .source-btn:hover {
+        background: rgba(255, 193, 7, 0.2) !important;
+        border-color: rgba(255, 193, 7, 0.4) !important;
+      }
+
+      /* 网盘链接/源接口链接初始全部隐藏(缩着状态) */
       .pan-links {
-        display: none;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
-        margin-top: 8px;
+        display: none; 
+        flex-wrap: wrap; 
+        gap: 6px;
+        margin-top: 6px;
         padding: 8px;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 10px;
-      }
-
-      .pan-links.show {
-        display: grid;
-      }
-
-      .pan-link-btn {
-        padding: 8px 4px;
-        background: rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.15);
         border-radius: 8px;
+        width: 100%;
+      }
+      
+      .pan-links.show {
+        display: flex !important;
+      }
+
+      /* 网盘/子链接小按钮样式 */
+      .pan-link-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 6px;
         font-size: 12px;
         color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        text-decoration: none;
         cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        white-space: nowrap;
         transition: all 0.2s ease;
-        text-align: center;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .pan-link-btn:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.2);
       }
+
+      /* 针对长源接口链接的一行一个样式规则 */
+      .source-links-block .pan-link-btn {
+        display: flex;
+        width: 100%; 
+        text-align: left;
+        justify-content: flex-start;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
       /* 音乐播放器 */
       .music-player {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
         z-index: 100;
-        transition: all 0.4s ease;
+        transition: all 0.3s ease;
         opacity: 0.8;
       }
 
       .music-player:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        transform: scale(1.08);
         opacity: 1;
-        background: rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.3);
       }
 
-      .music-player i {
-        font-size: 20px;
-        color: #ffffff;
-      }
+      .music-player i { font-size: 18px; color: #ffffff; }
 
       /* Toast提示样式 */
       .toast {
@@ -420,1134 +343,679 @@
         left: 50%;
         transform: translate(-50%, -50%) scale(0);
         padding: 12px 24px;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         color: #fff;
         border-radius: 8px;
         font-size: 14px;
         z-index: 9999;
-        transition: transform 0.3s ease;
+        transition: transform 0.25s ease;
         pointer-events: none;
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
 
       .toast.show {
         transform: translate(-50%, -50%) scale(1);
       }
 
-      @media (max-width: 1024px) {
-        .special-links {
-          grid-template-columns: repeat(4, 1fr);
-          gap: 10px;
-        }
-      }
-
+      /* 响应式断点优化 */
       @media (max-width: 768px) {
-        .container {
-          padding: 10px;
-          padding-top: 50px;
-        }
-
-        .avatar {
-          width: 90px;
-          height: 90px;
-        }
-
-        .special-links {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
-          max-width: 95%;
-        }
-
-        .special-link {
-          padding: 8px 12px;
-          font-size: 12px;
-        }
-
-        .special-link i {
-          font-size: 11px;
-        }
-
-        .bookmarks {
-          gap: 25px;
-        }
-
-        .bookmark {
-          padding: 20px;
-          border-radius: 25px;
-        }
-
-        .bookmark-description {
-          font-size: 16px;
-        }
-
-        .app-name-btn {
-          font-size: 13px;
-          padding: 10px 6px;
-          min-height: 40px;
-        }
-
-        .pan-links {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .marquee-content {
-          font-size: 12px;
-        }
-
-        .music-player {
-          width: 45px;
-          height: 45px;
-          bottom: 15px;
-          right: 15px;
-        }
-
-        .music-player i {
-          font-size: 18px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .bookmarks {
-          grid-template-columns: 1fr;
-        }
-
-        .special-links {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 8px;
-        }
-
-        .special-link {
-          padding: 6px 8px;
-          font-size: 11px;
-        }
-
-        .link-row {
-          flex-direction: column;
-          gap: 8px;
-        }
-
-        .link-item {
-          margin: 0;
-        }
-
-        .pan-links {
-          grid-template-columns: repeat(2, 1fr);
-        }
+        .container { padding: 10px; padding-top: 40px; }
+        .special-links { grid-template-columns: repeat(2, 1fr); gap: 8px; max-width: 95%; }
+        .bookmarks { grid-template-columns: 1fr; gap: 20px; }
+        .pan-links { gap: 5px; padding: 6px; }
+        .pan-link-btn { padding: 5px 10px; font-size: 11px; }
+        .link-item { flex-grow: unset; } /* 移动端单列排布时无需强行拉伸高度 */
       }
     </style>
   </head>
   <body>
-    <!-- 视频背景容器 -->
     <div class="video-container">
       <video id="video-bg" autoplay muted loop playsinline>
         <source
-          src="https://txmov2.a.kwimgs.com/upic/2023/10/13/16/BMjAyMzEwMTMxNjU4MTJfMTcyNTc4NzU4N18xMTQ4OTQ2OTgxMzRfMl8z_b_B209e890a596d64fbd174507b758b0815.mp4"
+          src="https://txmov2.a.kwimgs.com/upic/2023/10/13/16/BMjAyMzEwMTMxNjU4MTJfMTcyNTc4NzU4N18xMTQ4OTQ2OTgxMzxfMl8z_b_B209e890a596d64fbd174507b758b0815.mp4"
           type="video/mp4"
         />
-        您的浏览器不支持视频标签。
       </video>
     </div>
 
-    <!-- 深色叠加层 -->
     <div class="dark-overlay"></div>
-
-    <!-- 背景模糊层 -->
     <div class="blur-overlay"></div>
 
-    <!-- 音乐播放器 -->
     <audio id="bgMusic" loop>
-      <source
-        src="https://mpimg.cn/view.php/023ee037615f8ac3f5ff7cecd7ae6ec5.mp3"
-        type="audio/mpeg"
-      />
+      <source src="https://mpimg.cn/view.php/023ee037615f8ac3f5ff7cecd7ae6ec5.mp3" type="audio/mpeg" />
     </audio>
 
     <div class="music-player" id="musicToggle">
       <i class="fas fa-volume-up"></i>
     </div>
 
-    <!-- Toast提示容器 -->
     <div class="toast" id="toast">链接复制成功！</div>
 
     <div class="container">
       <header>
         <h1>书签收藏</h1>
-        <div class="avatar"></div>
-
-        <!-- 特殊链接区域 - 改进后的布局 -->
         <div class="special-links">
-          <a href="https://github.com/verglas/" class="special-link"
-            ><i class="fab fa-github"></i> Github
-          </a>
-          <a
-            href="https://gh-proxy.org/https://raw.githubusercontent.com/verglas/PG/main/musicapi.txt"
-            class="special-link"
-            ><i class="fas fa-music"></i> 音乐订阅
-          </a>
-          <a
-            href="https://gh-proxy.com/https://github.com/verglas/PG/blob/main/lives.txt"
-            class="special-link"
-            ><i class="fas fa-tv"></i> IPTV订阅
-          </a>
-          <a
-            href="https://gh-proxy.org/https://raw.githubusercontent.com/verglas/PG/main/shareapi.txt"
-            class="special-link"
-            ><i class="fas fa-film"></i> TVbox订阅
-          </a>
+          <a href="https://github.com/verglas/" class="special-link"><i class="fab fa-github"></i> 我的Github</a>
+          <a href="https://gh-proxy.org/https://raw.githubusercontent.com/verglas/PG/main/musicapi.txt" class="special-link"><i class="fas fa-music"></i> 我的音乐订阅</a>
+          <a href="https://gh-proxy.com/https://github.com/verglas/PG/blob/main/lives.txt" class="special-link"><i class="fas fa-tv"></i> 我的IPTV订阅</a>
+          <a href="https://gh-proxy.org/https://raw.githubusercontent.com/verglas/PG/main/shareapi.txt" class="special-link"><i class="fas fa-film"></i> 我的TVbox订阅</a>
         </div>
       </header>
 
       <div class="bookmarks">
-        <!-- TVbox软件合辑{空壳子} -->
         <div class="bookmark">
           <div class="bookmark-description">TVbox软件合辑{空壳子}</div>
           <div class="bookmark-links">
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="ysc-pan">
-                  <i class="fab fa-android"></i>影视仓
-                </div>
-                <div class="pan-links" id="ysc-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/74a8798a73f5?pwd=Jyjp"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/1f9cf399e9624"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1sY-Ryh7Bv63AXlwbGhpcaA?pwd=2tc2"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VO_AyMUYDjChF00mDL8I4nc0A1?pwd=pkhw"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="ysc-pan"><i class="fab fa-android"></i>影视仓</div>
+              <div class="pan-links" id="ysc-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/74a8798a73f5?pwd=Jyjp">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/1f9cf399e9624">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1sY-Ryh7Bv63AXlwbGhpcaA?pwd=2tc2">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VO_AyMUYDjChF00mDL8I4nc0A1?pwd=pkhw">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="okys-pan">
-                  <i class="fab fa-android"></i> OK影视
-                </div>
-                <div class="pan-links" id="okys-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/bccd2c877872?pwd=7QPV"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/c37aeda6baaf4"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/12b2K7wShQSk1TdKywOwi3Q?pwd=2591"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOZqiobJK5ycPvNBwhr-ndExA1?pwd=ahw3"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="okys-pan"><i class="fab fa-android"></i> OK影视</div>
+              <div class="pan-links" id="okys-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/bccd2c877872?pwd=7QPV">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/c37aeda6baaf4">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/12b2K7wShQSk1TdKywOwi3Q?pwd=2591">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOZqiobJK5ycPvNBwhr-ndExA1?pwd=ahw3">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="fmys-pan">
-                  <i class="fab fa-android"></i> FongMi影视
-                </div>
-                <div class="pan-links" id="fmys-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/9c17c06c1918?pwd=Asp6"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/24bab82f93654"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1iSBrLQV3uGL1KriPN7UG4w?pwd=jgez"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOZwm-wdJW13nOAW7XqM4DjSA1?pwd=aatu"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="fmys-pan"><i class="fab fa-android"></i> FongMi影视</div>
+              <div class="pan-links" id="fmys-pan">
+                <a class="pan-link-btn" target="_blank" data-link="https://github.com/FongMi/Release/tree/fongmi/apk" href="https://github.com/FongMi/Release/tree/fongmi/apk">官方</a>
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/9c17c06c1918?pwd=Asp6">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/24bab82f93654">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1iSBrLQV3uGL1KriPN7UG4w?pwd=jgez">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOZwm-wdJW13nOAW7XqM4DjSA1?pwd=aatu">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="tvbox-pan">
-                  <i class="fab fa-android"></i> TVBOX
-                </div>
-                <div class="pan-links" id="tvbox-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/ce449bf32d08?pwd=F7c5"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/19027c4a09bb4"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1Hm22tpY-y8ubmgHthWvGKw?pwd=9acc"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOblBbYLICxjQCn_JfOoGzoyA1?pwd=xer2"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="tvbox-pan"><i class="fab fa-android"></i> TVBOX</div>
+              <div class="pan-links" id="tvbox-pan">
+                <a class="pan-link-btn" target="_blank" data-link="https://github.com/youhunwl/TVAPP" href="https://github.com/youhunwl/TVAPP">第三方</a>
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/ce449bf32d08?pwd=F7c5">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/19027c4a09bb4">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1Hm22tpY-y8ubmgHthWvGKw?pwd=9acc">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOblBbYLICxjQCn_JfOoGzoyA1?pwd=xer2">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="ebox-pan">
-                  <i class="fab fa-android"></i> EasyBox
-                </div>
-                <div class="pan-links" id="ebox-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/10e731a83cde?pwd=ekBH"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1JGFB3OxtkeT0_WW1lIHOCQ?pwd=8nc3"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOZqoWBF21w48oG8GbbYlzCfA1?pwd=su9g"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="ebox-pan"><i class="fab fa-android"></i> EasyBox</div>
+              <div class="pan-links" id="ebox-pan">
+                <a class="pan-link-btn" target="_blank" data-link="https://easybox.vip/" href="https://easybox.vip/">官方</a>
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/10e731a83cde?pwd=ekBH">夸克</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1JGFB3OxtkeT0_WW1lIHOCQ?pwd=8nc3">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOZqoWBF21w48oG8GbbYlzCfA1?pwd=su9g">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="mmix-pan">
-                  <i class="fab fa-android"></i> MediaMix
-                </div>
-                <div class="pan-links" id="mmix-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/15eb23da704a?pwd=Exwt"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/adc3f03c718e4"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1Y870AThpc99Cc5fjgMgYPw?pwd=biuh"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOZqoIzvTDbj0ddEDsxLkX2NA1?pwd=64ty"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="mmix-pan"><i class="fab fa-android"></i> mediamix(521影视)</div>
+              <div class="pan-links" id="mmix-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/15eb23da704a?pwd=Exwt">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/adc3f03c718e4">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1Y870AThpc99Cc5fjgMgYPw?pwd=biuh">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOZqoIzvTDbj0ddEDsxLkX2NA1?pwd=64ty">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="xbox-pan">
-                  <i class="fab fa-android"></i> XMBox
-                </div>
-                <div class="pan-links" id="xbox-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/753563eeee63?pwd=kDaL"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/39222b8bb5014"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1oADDErj1ymSHZodcrwhizA?pwd=y38g"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOeUMvYcD4jdBulmSXg7ylChA1?pwd=2v7z"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="xbox-pan"><i class="fab fa-android"></i> XMBox</div>
+              <div class="pan-links" id="xbox-pan">
+				<a class="pan-link-btn" target="_blank" data-link="https://gitcode.com/gh_mirrors/xm/XMBOX" href="https://gitcode.com/gh_mirrors/xm/XMBOX">官方</a>
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/753563eeee63?pwd=kDaL">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/39222b8bb5014">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1oADDErj1ymSHZodcrwhizA?pwd=y38g">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOeUMvYcD4jdBulmSXg7ylChA1?pwd=2v7z">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="vodp-pan">
-                  <i class="fab fa-android"></i> 影视+
-                </div>
-                <div class="pan-links" id="vodp-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/0470435ad313?pwd=HmFS"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/fb8b0bb8cd3b4"
-                  >
-                    UC
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="vodp-pan"><i class="fab fa-android"></i> 影视+</div>
+              <div class="pan-links" id="vodp-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/0470435ad313?pwd=HmFS">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/fb8b0bb8cd3b4">UC</span>
               </div>
             </div>
-			<div class="link-row">
-                        <div class="link-item">
-                            <div class="app-name-btn" data-target="webht-pan"><i class="fab fa-android"></i> WebHomeTV </div>
-                            <div class="pan-links" id="webht-pan">
-                                <div class="pan-link-btn" data-link="https://pan.quark.cn/s/de7cbbf4aaa2">夸克</div>
-                                <div class="pan-link-btn" data-link="https://drive.uc.cn/s/4e60e3946db44">UC</div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="link-row">
-                        <div class="link-item">
-                            <div class="app-name-btn" data-target="newb-pan"><i class="fab fa-android"></i> NewBox </div>
-                            <div class="pan-links" id="newb-pan">
-                                <div class="pan-link-btn" data-link="https://pan.quark.cn/s/af4bfe1e851d">夸克</div>
-                            </div>
-                        </div>
-                    </div>
-					<div class="link-row">
-                        <div class="link-item">
-                            <div class="app-name-btn" data-target="Aibox-pan"><i class="fab fa-android"></i> Aibox </div>
-                            <div class="pan-links" id="Aibox-pan">
-                                <div class="pan-link-btn" data-link="https://pan.quark.cn/s/c18df42421bb">夸克</div>
-								<div class="pan-link-btn" data-link="https://pan.baidu.com/s/1vaeJGzs4VptvulYzmbhjag?pwd=wwv8">百度</div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="webht-pan"><i class="fab fa-android"></i> WebHomeTV</div>
+              <div class="pan-links" id="webht-pan">
+			  <a class="pan-link-btn" target="_blank" data-link="https://github.com/fish2018/webhtv" href="https://github.com/fish2018/webhtv">官方</a>
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/de7cbbf4aaa2">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/4e60e3946db44">UC</span>
+              </div>
+            </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="newb-pan"><i class="fab fa-android"></i> NewBox</div>
+              <div class="pan-links" id="newb-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/af4bfe1e851d">夸克</span>
+              </div>
+            </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="Aibox-pan"><i class="fab fa-android"></i> Aibox</div>
+              <div class="pan-links" id="Aibox-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/c18df42421bb">夸克</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1vaeJGzs4VptvulYzmbhjag?pwd=wwv8">百度</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- IPTV软件合辑{空壳子}-->
         <div class="bookmark">
           <div class="bookmark-description">IPTV软件合辑{空壳子}</div>
           <div class="bookmark-links">
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="k9tv-pan">
-                  <i class="fab fa-android"></i> 酷9-TV
-                </div>
-                <div class="pan-links" id="k9tv-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/97febce67aec?pwd=KPmx"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/94e6a62f5a634"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1xoO4A3xmTTq5xvJj3_Ev4A?pwd=rt4s"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VO_BimfKIWBTUoMvhpDAqnClA1?pwd=5c6q"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="k9tv-pan"><i class="fab fa-android"></i> 酷9-TV</div>
+              <div class="pan-links" id="k9tv-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/97febce67aec?pwd=KPmx">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/94e6a62f5a634">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1xoO4A3xmTTq5xvJj3_Ev4A?pwd=rt4s">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VO_BimfKIWBTUoMvhpDAqnClA1?pwd=5c6q">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="yykm-pan">
-                  <i class="fab fa-android"></i> 云影空蒙
-                </div>
-                <div class="pan-links" id="yykm-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/97febce67aec?pwd=KPmx"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/94e6a62f5a634"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1xoO4A3xmTTq5xvJj3_Ev4A?pwd=rt4s"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VO_BimfKIWBTUoMvhpDAqnClA1?pwd=5c6q"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="yykm-pan"><i class="fab fa-android"></i> 云影空蒙</div>
+              <div class="pan-links" id="yykm-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/97febce67aec?pwd=KPmx">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/94e6a62f5a634">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1xoO4A3xmTTq5xvJj3_Ev4A?pwd=rt4s">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VO_BimfKIWBTUoMvhpDAqnClA1?pwd=5c6q">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="tgyy-pan">
-                  <i class="fab fa-android"></i> 天光云影
-                </div>
-                <div class="pan-links" id="tgyy-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/97febce67aec?pwd=KPmx"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/94e6a62f5a634"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1xoO4A3xmTTq5xvJj3_Ev4A?pwd=rt4s"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VO_BimfKIWBTUoMvhpDAqnClA1?pwd=5c6q"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="tgyy-pan"><i class="fab fa-android"></i> 天光云影</div>
+              <div class="pan-links" id="tgyy-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/97febce67aec?pwd=KPmx">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/94e6a62f5a634">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1xoO4A3xmTTq5xvJj3_Ev4A?pwd=rt4s">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VO_BimfKIWBTUoMvhpDAqnClA1?pwd=5c6q">迅雷</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 猫源软件合辑{空壳子}-->
         <div class="bookmark">
           <div class="bookmark-description">猫源软件合辑{空壳子}</div>
           <div class="bookmark-links">
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="pkpl-pan">Peekpili</div>
-                <div class="pan-links" id="pkpl-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/936f3baa8b92?pwd=bnHM"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/5ca3388120ce4"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1iZ8L6ft3agIhuQ0nMq670g?pwd=5sbn"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOhsT9FDk4Ylp9535Lk0N9FdA1?pwd=dj6b#"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="pkpl-pan">Peekpili</div>
+              <div class="pan-links" id="pkpl-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/936f3baa8b92?pwd=bnHM">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/5ca3388120ce4">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1iZ8L6ft3agIhuQ0nMq670g?pwd=5sbn">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOhsT9FDk4Ylp9535Lk0N9FdA1?pwd=dj6b#">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="mays-pan">蚂蚁影视</div>
-                <div class="pan-links" id="mays-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/1de58c080d2b?pwd=gL12"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/1584f494181b4"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1blSvkluewDjr4WNjJFUXnQ?pwd=vadd"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOhEUgUtIbNl2XdQWcDaYZf-A1?pwd=su5s"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="mays-pan">蚂蚁影视</div>
+              <div class="pan-links" id="mays-pan">
+				<a class="pan-link-btn" target="_blank" data-link="https://github.com/ant-video/ant-video" href="https://github.com/ant-video/ant-video">官方</a>
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/1de58c080d2b?pwd=gL12">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/1584f494181b4">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1blSvkluewDjr4WNjJFUXnQ?pwd=vadd">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOhEUgUtIbNl2XdQWcDaYZf-A1?pwd=su5s">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="mz-pan">猫爪</div>
-                <div class="pan-links" id="mz-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/90e116c444de?pwd=UERD"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1HXlpESFYQHd6ti0MBZ0S3A?pwd=zggy"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOZqnyiM1LXA79XdVikpeAKxA1?pwd=qjq3"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="mz-pan">猫爪</div>
+              <div class="pan-links" id="mz-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/90e116c444de?pwd=UERD">夸克</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1HXlpESFYQHd6ti0MBZ0S3A?pwd=zggy">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOZqnyiM1LXA79XdVikpeAKxA1?pwd=qjq3">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="uzys-pan">UZ影视</div>
-                <div class="pan-links" id="uzys-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/e27675385a0f?pwd=MT7b"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/ee3413a78bdf4"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1Y3uZZeItkAYqYFO_9F3YuA?pwd=j4ui"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOZqopcmqOWaEOISMIErponFA1?pwd=sruk"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="uzys-pan">UZ影视</div>
+              <div class="pan-links" id="uzys-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/e27675385a0f?pwd=MT7b">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/ee3413a78bdf4">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1Y3uZZeItkAYqYFO_9F3YuA?pwd=j4ui">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOZqopcmqOWaEOISMIErponFA1?pwd=sruk">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="mira-pan">
-                  <i class="fab fa-apple"></i> MiraPlay
-                </div>
-                <div class="pan-links" id="mira-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://apps.apple.com/us/app/miraplay/id6749287494?l=zh-Hans-CN"
-                  >
-                    AppStore
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="mira-pan"><i class="fab fa-apple"></i> MiraPlay</div>
+              <div class="pan-links" id="mira-pan">
+                <a class="pan-link-btn" target="_blank" data-link="https://apps.apple.com/us/app/miraplay/id6749287494?l=zh-Hans-CN" href="https://apps.apple.com/us/app/miraplay/id6749287494?l=zh-Hans-CN">AppStore官网</a>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="mlyb-pan">
-                  <i class="fab fa-apple"></i> 魔力云播
-                </div>
-                <div class="pan-links" id="mlyb-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://testflight.apple.com/join/ywzcMKS3"
-                  >
-                    TestFlight
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="mlyb-pan"><i class="fab fa-apple"></i> 魔力云播</div>
+              <div class="pan-links" id="mlyb-pan">
+                <a class="pan-link-btn" target="_blank" data-link="https://testflight.apple.com/join/ywzcMKS3" href="https://testflight.apple.com/join/ywzcMKS3">TF官方测试</a>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="jstv-pan">
-                  <i class="fab fa-apple"></i> JSTV
-                </div>
-                <div class="pan-links" id="jstv-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://testflight.apple.com/join/thdxEjTZ"
-                  >
-                    TestFlight
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="jstv-pan"><i class="fab fa-apple"></i> JSTV</div>
+              <div class="pan-links" id="jstv-pan">
+                <a class="pan-link-btn" target="_blank" data-link="https://testflight.apple.com/join/thdxEjTZ" href="https://testflight.apple.com/join/thdxEjTZ">TF官方测试</a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 音乐软件合辑{空壳子}-->
         <div class="bookmark">
           <div class="bookmark-description">Music软件合辑{空壳子}</div>
           <div class="bookmark-links">
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="lxm-pan">洛雪-Music</div>
-                <div class="pan-links" id="lxm-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/8dcfeaecef47?pwd=pzap"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/dc24092d6d234"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1xo-PJc_5T78FpjCcuOCrfg?pwd=ymb9"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOeZJl2L8bjMhDVHDh5MjpKsA1?pwd=j327"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="lxm-pan">LX Music(洛雪音乐)</div>
+              <div class="pan-links" id="lxm-pan">
+                <a class="pan-link-btn" target="_blank" data-link="https://github.com/lyswhut/lx-music-mobile" href="https://github.com/lyswhut/lx-music-mobile">官方移动版</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://github.com/lyswhut/lx-music-desktop" href="https://github.com/lyswhut/lx-music-desktop">官方桌面版</a>
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/8dcfeaecef47?pwd=pzap">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/dc24092d6d234">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1xo-PJc_5T78FpjCcuOCrfg?pwd=ymb9">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOeZJl2L8bjMhDVHDh5MjpKsA1?pwd=j327">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="mf-pan">MusicFree</div>
-                <div class="pan-links" id="mf-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/afe49672c38a?pwd=DzQe"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/9599abb869b34"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/14YA5pgdYWC9-POMhRLNLlg?pwd=5j5y"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VO_G00j2-jdvbu4jfooEifZvA1?pwd=uvug"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="mf-pan">MusicFree</div>
+              <div class="pan-links" id="mf-pan">
+                <a class="pan-link-btn" target="_blank" data-link="https://github.com/maotoumao/musicfree" href="https://github.com/maotoumao/musicfree">官方</a>
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/afe49672c38a?pwd=DzQe">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/9599abb869b34">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/14YA5pgdYWC9-POMhRLNLlg?pwd=5j5y">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VO_G00j2-jdvbu4jfooEifZvA1?pwd=uvug">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="amp-pan">
-                  AlgerMusicPlayer
-                </div>
-                <div class="pan-links" id="amp-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/975d8f85c77a?pwd=cNT4"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/7a753f9834bb4"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1Dgzt_CjPT5FrmHZta-zHIg?pwd=8dm5"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOjP5_89f_n0FZGn_4ta5Hd-A1?pwd=p5u3"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="amp-pan">AlgerMusicPlayer</div>
+              <div class="pan-links" id="amp-pan">
+                <a class="pan-link-btn" target="_blank" data-link="https://github.com/algerkong/AlgerMusicPlayer" href="https://github.com/algerkong/AlgerMusicPlayer">官方</a>
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/975d8f85c77a?pwd=cNT4">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/7a753f9834bb4">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1Dgzt_CjPT5FrmHZta-zHIg?pwd=8dm5">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOjP5_89f_n0FZGn_4ta5Hd-A1?pwd=p5u3">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="mbm-pan">
-                  <i class="fab fa-android"></i> MobiMusic
-                </div>
-                <div class="pan-links" id="mbm-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/afe49672c38a?pwd=DzQe"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/1322806760964"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1dJto7PRHDNp91DNesx-LXA?pwd=ycqe"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOhUt5VWhFCHe-2P9wOlL8e0A1?pwd=93nn#"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="mbm-pan"><i class="fab fa-android"></i> MobiMusic</div>
+              <div class="pan-links" id="mbm-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/afe49672c38a?pwd=DzQe">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/1322806760964">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1dJto7PRHDNp91DNesx-LXA?pwd=ycqe">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOhUt5VWhFCHe-2P9wOlL8e0A1?pwd=93nn#">迅雷</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 其他软件专区 -->
         <div class="bookmark">
           <div class="bookmark-description">其他软件合集</div>
           <div class="bookmark-links">
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="jkcadb-pan">
-                  <i class="fab fa-android"></i> 甲壳虫adb助手
-                </div>
-                <div class="pan-links" id="jkcadb-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/44e236d51613?pwd=Xe1F"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/141bb60acffb4"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1LR_L8rLrQ5mZAyBE_oUNeg?pwd=z2de"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VO_B1yGY7eOeDwHFnqua8-x-A1?pwd=fhkv"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="jkcadb-pan"><i class="fab fa-android"></i> 甲壳虫adb助手</div>
+              <div class="pan-links" id="jkcadb-pan">
+                <a class="pan-link-btn" target="_blank" data-link="http://www.coolapk.com/apk/com.gspace.adb" href="http://www.coolapk.com/apk/com.gspace.adb">酷安官网区</a>
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/44e236d51613?pwd=Xe1F">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/141bb60acffb4">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1LR_L8rLrQ5mZAyBE_oUNeg?pwd=z2de">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VO_B1yGY7eOeDwHFnqua8-x-A1?pwd=fhkv">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="yygj-pan">
-                  <i class="fab fa-android"></i> 应用管家
-                </div>
-                <div class="pan-links" id="yygj-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/10feb943cd98?pwd=GXzJ"
-                  >
-                    夸克
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="yygj-pan"><i class="fab fa-android"></i> 应用管家</div>
+              <div class="pan-links" id="yygj-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/10feb943cd98?pwd=GXzJ">夸克</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="mtwjgl-pan">
-                  <i class="fab fa-android"></i> MT文件管理器
-                </div>
-                <div class="pan-links" id="mtwjgl-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/17fe62e28b4b?pwd=Zvit"
-                  >
-                    夸克
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="mtwjgl-pan"><i class="fab fa-android"></i> MT文件管理器</div>
+              <div class="pan-links" id="mtwjgl-pan">
+                <a class="pan-link-btn" target="_blank" data-link="https://mt2.cn/" href="https://mt2.cn/">官方</a>
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/17fe62e28b4b?pwd=Zvit">夸克</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="cczb-pan">纯粹直播</div>
-                <div class="pan-links" id="cczb-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/ba92d60c0a63?pwd=bvV9"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/daaecf94e05a4"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1IMpoaCKRswJQLBhpWCv_hw?pwd=ng1c"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOhIC4nYvXMR5QtgTTAbItkWA1?pwd=aidz"
-                  >
-                    迅雷
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="cczb-pan">Pure Live(纯粹直播)</div>
+              <div class="pan-links" id="cczb-pan">
+                <a class="pan-link-btn" target="_blank" data-link="https://github.com/liuchuancong/pure_live" href="https://github.com/liuchuancong/pure_live">官方源码</a>
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/ba92d60c0a63?pwd=bvV9">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/daaecf94e05a4">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1IMpoaCKRswJQLBhpWCv_hw?pwd=ng1c">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOhIC4nYvXMR5QtgTTAbItkWA1?pwd=aidz">迅雷</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="fuse-pan">FUSE</div>
-                <div class="pan-links" id="fuse-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/6c2db0d3a521?pwd=dZek"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/c37037836d954"
-                  >
-                    UC
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="fuse-pan">FUSE</div>
+              <div class="pan-links" id="fuse-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/6c2db0d3a521?pwd=dZek">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/c37037836d954">UC</span>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="ibox-pan">
-                  <i class="fab fa-apple"></i> iBox
-                </div>
-                <div class="pan-links" id="ibox-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/e2378996919c?pwd=HkAG"
-                  >
-                    夸克
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://drive.uc.cn/s/9e747109b8824"
-                  >
-                    UC
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.baidu.com/s/1I9_PGoyx81NLp3l8zn4rSg?pwd=gh2i"
-                  >
-                    百度
-                  </div>
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.xunlei.com/s/VOZqmuUuesOW9nNgcKlaGgaJA1?pwd=hmsx"
-                  >
-                    迅雷
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="apk-pan">
-                  <i class="fab fa-android"></i> 破解apk
-                </div>
-                <div class="pan-links" id="apk-pan">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://pan.quark.cn/s/85ae545b84e4?pwd=CSi4"
-                  >
-                    夸克
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="ibox-pan"><i class="fab fa-apple"></i> iBox</div>
+              <div class="pan-links" id="ibox-pan">
+                <span class="pan-link-btn" data-link="https://pan.quark.cn/s/e2378996919c?pwd=HkAG">夸克</span>
+                <span class="pan-link-btn" data-link="https://drive.uc.cn/s/9e747109b8824">UC</span>
+                <span class="pan-link-btn" data-link="https://pan.baidu.com/s/1I9_PGoyx81NLp3l8zn4rSg?pwd=gh2i">百度</span>
+                <span class="pan-link-btn" data-link="https://pan.xunlei.com/s/VOZqmuUuesOW9nNgcKlaGgaJA1?pwd=hmsx">迅雷</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- TVbox聚合 -->
         <div class="bookmark">
           <div class="bookmark-description">源聚合</div>
           <div class="bookmark-links">
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="tvbox-source-aggregator-1">
-                  <i class="fab fa-github"></i> tvbox-source-aggregator
-                </div>
-                <div class="pan-links" id="tvbox-source-aggregator-1">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://github.com/qq148376839/tvbox-source-aggregator"
-                  >
-                    github
-                  </div>
-                  
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://gitee.com/tengxiaobao/tvbox-source-aggregator"
-                  >
-                    gitee
-                  </div>
-					
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="tvbox-source-aggregator-1"><i class="fab fa-github"></i> tvbox-source-aggregator</div>
+              <div class="pan-links" id="tvbox-source-aggregator-1">
+                <a class="pan-link-btn" target="_blank" data-link="https://github.com/qq148376839/tvbox-source-aggregator" href="https://github.com/qq148376839/tvbox-source-aggregator"><i class="fab fa-github"></i>github仓库</a>
+                <a class="pan-link-btn" target="_blank" data-link="https://gitee.com/tengxiaobao/tvbox-source-aggregator" href="https://gitee.com/tengxiaobao/tvbox-source-aggregator"><i class="fab fa-git-alt"></i> gitee源码区</a>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="tvbox-auxiliary">
-                  <i class="fab fa-github"></i> tvbox-auxiliary
-                </div>
-                <div class="pan-links" id="tvbox-auxiliary">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://github.com/nuu987/tvbox-auxiliary"
-                  >
-                    github
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="tvbox-auxiliary"><i class="fab fa-github"></i> tvbox-auxiliary</div>
+              <div class="pan-links" id="tvbox-auxiliary">
+                <a class="pan-link-btn" target="_blank" data-link="https://github.com/nuu987/tvbox-auxiliary" href="https://github.com/nuu987/tvbox-auxiliary"><i class="fab fa-github"></i>github仓库</a>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="tvbox-source-aggregator-2">
-                  <i class="fab fa-github"></i> tvbox-source-aggregator
-                </div>
-                <div class="pan-links" id="tvbox-source-aggregator-2">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://gitee.com/yygitee118/tvbox-source-aggregator"
-                  >
-                    gitee
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="tvbox-source-aggregator-2"><i class="fab fa-git-alt"></i> tvbox-source-aggregator</div>
+              <div class="pan-links" id="tvbox-source-aggregator-2">
+                <a class="pan-link-btn" target="_blank" data-link="https://gitee.com/yygitee118/tvbox-source-aggregator" href="https://gitee.com/yygitee118/tvbox-source-aggregator"><i class="fab fa-git-alt"></i> gitee源码区</a>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="migu_video">
-                  <i class="fab fa-github"></i> migu_video
-                </div>
-                <div class="pan-links" id="migu_video">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://github.com/develop202/migu_video"
-                  >
-                    github
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="migu_video"><i class="fab fa-github"></i> migu_video</div>
+              <div class="pan-links" id="migu_video">
+                <a class="pan-link-btn" target="_blank" data-link="https://github.com/develop202/migu_video" href="https://github.com/develop202/migu_video"><i class="fab fa-github"></i>github仓库</a>
               </div>
             </div>
-            <div class="link-row">
-              <div class="link-item">
-                <div class="app-name-btn" data-target="drpy-node">
-                  <i class="fab fa-github"></i> drpy-node
-                </div>
-                <div class="pan-links" id="drpy-node">
-                  <div
-                    class="pan-link-btn"
-                    data-link="https://github.com/Hululu007/drpy-node"
-                  >
-                    github
-                  </div>
-                </div>
+            <div class="link-item">
+              <div class="app-name-btn" data-target="drpy-node"><i class="fab fa-github"></i> drpy-node</div>
+              <div class="pan-links" id="drpy-node">
+                <a class="pan-link-btn" target="_blank" data-link="https://github.com/Hululu007/drpy-node" href="https://github.com/Hululu007/drpy-node"><i class="fab fa-github"></i>github仓库</a>
               </div>
             </div>
-			  
           </div>
         </div>
-		  
+
+
+        <div class="bookmark">
+          <div class="bookmark-description">TVBOX 核心源</div>
+          <div class="bookmark-links source-links-block">
+            <div class="link-item">
+              <div class="app-name-btn source-btn" data-target="tvbox-src-box"><i class="fas fa-folder-open"></i> 全网最全核心多仓源</div>
+              <div class="pan-links" id="tvbox-src-box">
+				<a class="pan-link-btn" target="_blank" data-link="https://9280.kstore.vip/newwex.json" href="https://9280.kstore.vip/newwex.json"><i class="fas fa-link"></i> 牛二·新街口 (主线)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://9280.kstore.space/newwex.json" href="https://9280.kstore.space/newwex.json"><i class="fas fa-link"></i> 牛二·新街口 (备用)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://9280.kstore.vip/wex.json" href="https://9280.kstore.vip/wex.json"><i class="fas fa-link"></i> 牛二·防屏蔽 (V1)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://9280.kstore.space/wex.json" href="https://9280.kstore.space/wex.json"><i class="fas fa-link"></i> 牛二·防屏蔽 (V2)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://6800.kstore.vip/fish.json" href="https://6800.kstore.vip/fish.json"><i class="fas fa-link"></i> 凯速 (KStore)</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://fty.xxooo.cf/tv" href="http://fty.xxooo.cf/tv"><i class="fas fa-link"></i> 饭太硬 (CF)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json" href="https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json"><i class="fas fa-link"></i> 高天流云</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.liucn.cc/box/m.json" href="https://raw.liucn.cc/box/m.json"><i class="fas fa-link"></i> 老刘备线路</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://bitbucket.org/xduo/duoapi/raw/master/xpg.json" href="https://bitbucket.org/xduo/duoapi/raw/master/xpg.json"><i class="fas fa-link"></i> 小苹果线路</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/mrgaoshuiquan/tvbox-config/refs/heads/main/jhkx-full.json" href="https://raw.githubusercontent.com/mrgaoshuiquan/tvbox-config/refs/heads/main/jhkx-full.json"><i class="fas fa-link"></i> mrgaoshuiquan</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/fty.json" href="https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/fty.json"><i class="fas fa-link"></i> qist-fty</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/jsm.json" href="https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/jsm.json"><i class="fas fa-link"></i> qist-jsm</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/dianshi.json" href="https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/dianshi.json"><i class="fas fa-link"></i> qist-dianshi</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/xiaosa/api.json" href="https://raw.githubusercontent.com/qist/tvbox/refs/heads/master/xiaosa/api.json"><i class="fas fa-link"></i> qist-xiaosa</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/leexuben/TVBOX-merge/refs/heads/main/api.json" href="https://raw.githubusercontent.com/leexuben/TVBOX-merge/refs/heads/main/api.json"><i class="fas fa-link"></i> TVBOX-Merge</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/leexuben/BINGO-TV/refs/heads/main/XBTV.json" href="https://raw.githubusercontent.com/leexuben/BINGO-TV/refs/heads/main/XBTV.json"><i class="fas fa-link"></i> BINGO-TV (XBTV)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/tushen6/Tattoo/refs/heads/main/OK/okys.json" href="https://raw.githubusercontent.com/tushen6/Tattoo/refs/heads/main/OK/okys.json"><i class="fas fa-link"></i> 涂神 (Tattoo)</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://xhztv.top/xhz" href="http://xhztv.top/xhz"><i class="fas fa-link"></i> 小盒子单仓</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/chitue/dongliTV/main/api.json" href="https://raw.githubusercontent.com/chitue/dongliTV/main/api.json"><i class="fas fa-link"></i> 动力TV (Git)</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://45.207.209.85:8888/down/xUOGH3sW3Q0g.json" href="http://45.207.209.85:8888/down/xUOGH3sW3Q0g.json"><i class="fas fa-link"></i> 45.207 (IP线)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://gongdian.top/tvbox/uz/uz.json" href="https://gongdian.top/tvbox/uz/uz.json"><i class="fas fa-link"></i> 宫殿 (UZ)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://gongdian.top/tvbox/tbox/config.json" href="https://gongdian.top/tvbox/tbox/config.json"><i class="fas fa-link"></i> 宫殿 (Config)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://codeberg.org/maskcao/maskcao/raw/branch/main/x.json" href="https://codeberg.org/maskcao/maskcao/raw/branch/main/x.json"><i class="fas fa-link"></i> Maskcao (Codeberg)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://jianhancloud.cn/lcys/lcjk.json" href="https://jianhancloud.cn/lcys/lcjk.json"><i class="fas fa-link"></i> lcys</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/xianyuyimu/TVBOX-/main/TVBox/%E4%B8%80%E6%9C%A8%E8%87%AA%E7%94%A8.json" href="https://raw.githubusercontent.com/xianyuyimu/TVBOX-/main/TVBox/%E4%B8%80%E6%9C%A8%E8%87%AA%E7%94%A8.json"><i class="fas fa-link"></i> 一木线路</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/XiaoYiChaHang/tvbox/main/ysj.json" href="https://raw.githubusercontent.com/XiaoYiChaHang/tvbox/main/ysj.json"><i class="fas fa-link"></i> 荷城茶秀</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://fastly.jsdelivr.net/gh/ls125781003/dmtg@master/zy.json" href="https://fastly.jsdelivr.net/gh/ls125781003/dmtg@master/zy.json"><i class="fas fa-link"></i> 裹柳</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/leexuben/TVBOX-merge/refs/heads/main/FuLi%F0%9F%94%9E.json" href="https://raw.githubusercontent.com/leexuben/TVBOX-merge/refs/heads/main/FuLi%F0%9F%94%9E.json"> 🔞FuLi</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/leexuben/TVBOX-merge/refs/heads/main/FuLi.json" href="https://raw.githubusercontent.com/leexuben/TVBOX-merge/refs/heads/main/FuLi.json"> 🔞FuLi2</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bookmark">
+          <div class="bookmark-description">MACCMS 苹果切片源</div>
+          <div class="bookmark-links source-links-block">
+            <div class="link-item">
+              <div class="app-name-btn source-btn" data-target="maccms-src-box"><i class="fas fa-play-circle"></i> 高清稳定秒播切片源</div>
+              <div class="pan-links" id="maccms-src-box">
+				<a class="pan-link-btn" target="_blank" data-link="https://www.hongniuzy2.com/api.php/provide/vod/" href="https://www.hongniuzy2.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 红牛资源v1</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.wujinwszy.net/api.php/provide/vod/" href="https://api.wujinwszy.net/api.php/provide/vod/"><i class="fas fa-bolt"></i> 无尽资源v1</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://xsd.sdzyapi.com/api.php/provide/vod/" href="https://xsd.sdzyapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 闪电资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://api.yzzy-api.com/inc/api_mac10.php" href="http://api.yzzy-api.com/inc/api_mac10.php"><i class="fas fa-bolt"></i> 优质资源v1</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.xinlangapi.com/api.php/provide/vod/" href="https://api.xinlangapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 新浪资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://subocaiji.com/api.php/provide/vod/" href="https://subocaiji.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 速播资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://cj.lzcaiji.com/api.php/provide/vod/" href="https://cj.lzcaiji.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 量子资源v1</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.ffzyapi.com/api.php/provide/vod/" href="https://api.ffzyapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 非凡资源v1</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://wolongzyw.com/api.php/provide/vod/" href="https://wolongzyw.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 卧龙资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://360zyzz.com/api.php/provide/vod/" href="https://360zyzz.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> TV360资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.ukuapi88.com/api.php/provide/vod/" href="https://api.ukuapi88.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> TVU酷资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://caiji.maotaizy.cc/api.php/provide/vod/" href="https://caiji.maotaizy.cc/api.php/provide/vod/"><i class="fas fa-bolt"></i> TV茅台资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://caiji.moduapi.cc/api.php/provide/vod/" href="https://caiji.moduapi.cc/api.php/provide/vod/"><i class="fas fa-bolt"></i> TV魔都动漫</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://dadiapi.com/api.php/provide/vod/" href="https://dadiapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> TV大地资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://caiji.kuaichezy.org/api.php/provide/vod/" href="https://caiji.kuaichezy.org/api.php/provide/vod/"><i class="fas fa-bolt"></i> TV快车资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.wwzy.tv/api.php/provide/vod/" href="https://api.wwzy.tv/api.php/provide/vod/"><i class="fas fa-bolt"></i> TV旺旺资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://iqiyizyapi.com/api.php/provide/vod/" href="https://iqiyizyapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 爱奇艺采集</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://www.hongniuzy3.com/api.php/provide/vod/" href="https://www.hongniuzy3.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 红牛资源v2</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://caiji.dbzy5.com/api.php/provide/vod/" href="https://caiji.dbzy5.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 豆瓣资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.yzzy-api.com/inc/apijson.php" href="https://api.yzzy-api.com/inc/apijson.php"><i class="fas fa-bolt"></i> 优质资源v2</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://jyzyapi.com/api.php/provide/vod/" href="https://jyzyapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 金鹰资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.ukuapi.com/api.php/provide/vod/" href="https://api.ukuapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> U酷资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.guangsuapi.com/api.php/provide/vod/" href="https://api.guangsuapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 光速资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://jszyapi.com/api.php/provide/vod/" href="https://jszyapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 极速资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://hhzyapi.com/api.php/provide/vod/" href="https://hhzyapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 豪华资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://bfzyapi.com/api.php/provide/vod/" href="https://bfzyapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 暴风资源v1</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://suoniapi.com/api.php/provide/vod/" href="https://suoniapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 索尼资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.tiankongapi.com/api.php/provide/vod/" href="https://api.tiankongapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 天空资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.wujinapi.me/api.php/provide/vod/" href="https://api.wujinapi.me/api.php/provide/vod/"><i class="fas fa-bolt"></i> 无尽资源v2</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://caiji.kuaichezy.com/api.php/provide/vod/" href="https://caiji.kuaichezy.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 快车资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.apibdzy.com/api.php/provide/vod/" href="https://api.apibdzy.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 百度资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.1080zyku.com/inc/apijson.php" href="https://api.1080zyku.com/inc/apijson.php"><i class="fas fa-bolt"></i> 1080P资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.kudianzy.com/api.php/provide/vod/" href="https://api.kudianzy.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 酷点资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://bfzy.pro/api.php/provide/vod/" href="https://bfzy.pro/api.php/provide/vod/"><i class="fas fa-bolt"></i> 暴风资源v2</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://cj.lziapi.com/api.php/provide/vod/" href="https://cj.lziapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 量子资源v2</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://p2100.net/api.php/provide/vod/" href="https://p2100.net/api.php/provide/vod/"><i class="fas fa-bolt"></i> 飘零资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.maoyanapi.top/api.php/provide/vod/" href="https://api.maoyanapi.top/api.php/provide/vod/"><i class="fas fa-bolt"></i> 猫妖资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.wujinapi.cc/api.php/provide/vod/" href="https://api.wujinapi.cc/api.php/provide/vod/"><i class="fas fa-bolt"></i> 无尽资源v3</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://154.219.117.232:9981/jacloudapi.php/provide/vod/" href="http://154.219.117.232:9981/jacloudapi.php/provide/vod/"><i class="fas fa-bolt"></i> 建安资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://lovedan.net/api.php/provide/vod/" href="https://lovedan.net/api.php/provide/vod/"><i class="fas fa-bolt"></i> 艾旦影视</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://zuidazy.me/api.php/provide/vod/" href="https://zuidazy.me/api.php/provide/vod/"><i class="fas fa-bolt"></i> 最大资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://www.yytv4.cc/api.php/provide/vod/" href="https://www.yytv4.cc/api.php/provide/vod/"><i class="fas fa-bolt"></i> 优优资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://cj2.ffzyapi.com/api.php/provide/vod/" href="http://cj2.ffzyapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 非凡资源v2</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.ffox.top/api.php/provide/vod/" href="https://api.ffox.top/api.php/provide/vod/"><i class="fas fa-bolt"></i> 黑狐资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://cj.rycjapi.com/api.php/provide/vod" href="https://cj.rycjapi.com/api.php/provide/vod"><i class="fas fa-bolt"></i> 如意资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://cj.ffzyapi.com/api.php/provide/vod" href="https://cj.ffzyapi.com/api.php/provide/vod"><i class="fas fa-bolt"></i> 非凡资源v3</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://sdzyapi.com/api.php/provide/vod" href="https://sdzyapi.com/api.php/provide/vod"><i class="fas fa-bolt"></i> 闪电资源v2</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://jyzyapi.com/provide/vod" href="https://jyzyapi.com/provide/vod"><i class="fas fa-bolt"></i> 金鹰资源v2</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.bwzyz.com/api.php/provide/vod/" href="https://api.bwzyz.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 百万资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://www.xxibaozyw.com/api.php/provide/vod/" href="https://www.xxibaozyw.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 细胞资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://155api.com/api.php/provide/vod/" href="https://155api.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 155资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://91md.me/api.php/provide/vod/" href="https://91md.me/api.php/provide/vod/"><i class="fas fa-bolt"></i> 麻豆资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.souavzyw.net/api.php/provide/vod/" href="https://api.souavzyw.net/api.php/provide/vod/"><i class="fas fa-bolt"></i> 搜AV资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://apilj.com/api.php/provide/vod/" href="https://apilj.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 辣椒资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://apilsbzy1.com/api.php/provide/vod/" href="https://apilsbzy1.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 老色逼资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://shayuapi.com/api.php/provide/vod/" href="https://shayuapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 鲨鱼资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://hsckzy888.com/api.php/provide/vod/" href="https://hsckzy888.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 黄仓资源v1</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://heiliaozyapi.com/api.php/provide/vod/" href="https://heiliaozyapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 黑料资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://www.xiangjiaozyw.com/api.php/provide/vod/" href="https://www.xiangjiaozyw.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 香蕉资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://aosikazy.com/api.php/provide/vod/" href="https://aosikazy.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 奥斯卡资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://naixxzy.com/api.php/provide/vod/" href="https://naixxzy.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 奶香资源v1</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://apidanaizi.com/api.php/provide/vod/" href="https://apidanaizi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 大奶资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://thzy1.me/api.php/provide/vod/" href="https://thzy1.me/api.php/provide/vod/"><i class="fas fa-bolt"></i> 桃花资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://xxavs.com/api.php/provide/vod/" href="https://xxavs.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 湿乐园资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://www.siwazyw.tv/api.php/provide/vod/" href="http://www.siwazyw.tv/api.php/provide/vod/"><i class="fas fa-bolt"></i> 丝袜资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://91av.cyou/api.php/provide/vod/" href="https://91av.cyou/api.php/provide/vod/"><i class="fas fa-bolt"></i> 91资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://hsckzy.vip/api.php/provide/vod/" href="https://hsckzy.vip/api.php/provide/vod/"><i class="fas fa-bolt"></i> 黄仓VIP</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://xingba222.com/api.php/provide/vod/" href="https://xingba222.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 杏吧资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://caiji.semaozy.net/inc/api.php/provide/vod" href="https://caiji.semaozy.net/inc/api.php/provide/vod"><i class="fas fa-bolt"></i> 色猫资源v1</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://api.sexnguon.com/api.php/provide/vod/" href="https://api.sexnguon.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 南国资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://a.uezy.pw/api.php/provide/vod/" href="https://a.uezy.pw/api.php/provide/vod/"><i class="fas fa-bolt"></i> 优异资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://lbapiby.com/api.php/provide/vod/" href="http://lbapiby.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 爱播资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://jkunzyapi.com/api.php/provide/vod/" href="https://jkunzyapi.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 坤坤资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://lbapi9.com/api.php/provide/vod/" href="https://lbapi9.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 乐播资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://slapibf.com/api.php/provide/vod/" href="https://slapibf.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 森林资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://apiyutu.com/api.php/provide/vod/" href="https://apiyutu.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 玉兔资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://fhapi9.com/api.php/provide/vod/" href="http://fhapi9.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 番号资源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://naixxzy1.com/api.php/provide/vod/" href="https://naixxzy1.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 奶香资源v3</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://vnzyz.com/api.php/provide/vod/" href="https://vnzyz.com/api.php/provide/vod/"><i class="fas fa-bolt"></i> 越南资源</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bookmark">
+          <div class="bookmark-description">IPTV 直播源 (M3U)</div>
+          <div class="bookmark-links source-links-block">
+            <div class="link-item">
+              <div class="app-name-btn source-btn" data-target="live-src-box"><i class="fas fa-satellite-dish"></i> 国内外多线 IPTV 直播源</div>
+              <div class="pan-links" id="live-src-box">
+				<a class="pan-link-btn" target="_blank" data-link="https://live.zbds.top/tv/iptv4.m3u" href="https://live.zbds.top/tv/iptv4.m3u"><i class="fas fa-list-ul"></i> zbds</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/Free-TV/IPTV/master/playlists/playlist_china.m3u" href="https://raw.githubusercontent.com/Free-TV/IPTV/master/playlists/playlist_china.m3u"><i class="fas fa-list-ul"></i> FreeTV_中国基础</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/Rivens7/Livelist/refs/heads/main/IPTV.m3u" href="https://raw.githubusercontent.com/Rivens7/Livelist/refs/heads/main/IPTV.m3u"><i class="fas fa-list-ul"></i> Rivens7_IPTV</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/Rivens7/Livelist/refs/heads/main/CNTV.m3u" href="https://raw.githubusercontent.com/Rivens7/Livelist/refs/heads/main/CNTV.m3u"><i class="fas fa-list-ul"></i> Rivens7_CNTV</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/Rivens7/Livelist/refs/heads/main/CCTV.m3u" href="https://raw.githubusercontent.com/Rivens7/Livelist/refs/heads/main/CCTV.m3u"><i class="fas fa-list-ul"></i> Rivens7_CCTV</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://proxy.lalifeier.eu.org/https://raw.githubusercontent.com/lalifeier/IPTV/main/txt/hotel/全国.txt" href="https://proxy.lalifeier.eu.org/https://raw.githubusercontent.com/lalifeier/IPTV/main/txt/hotel/全国.txt"><i class="fas fa-list-ul"></i> lalifeier酒店源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://proxy.lalifeier.eu.org/https://raw.githubusercontent.com/lalifeier/IPTV/main/m3u/IPTV.m3u" href="https://proxy.lalifeier.eu.org/https://raw.githubusercontent.com/lalifeier/IPTV/main/m3u/IPTV.m3u"><i class="fas fa-list-ul"></i> lalifeier聚合源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://proxy.lalifeier.eu.org/https://raw.githubusercontent.com/lalifeier/IPTV/main/txt/udpxy/全国.txt" href="https://proxy.lalifeier.eu.org/https://raw.githubusercontent.com/lalifeier/IPTV/main/txt/udpxy/全国.txt"><i class="fas fa-list-ul"></i> lalifeier组播源</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://proxy.lalifeier.eu.org/https://raw.githubusercontent.com/lalifeier/IPTV/main/m3u/Live.m3u" href="https://proxy.lalifeier.eu.org/https://raw.githubusercontent.com/lalifeier/IPTV/main/m3u/Live.m3u"><i class="fas fa-list-ul"></i> lalifeier直播聚合</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://proxy.lalifeier.eu.org/https://raw.githubusercontent.com/lalifeier/IPTV/main/m3u/huya.m3u" href="https://proxy.lalifeier.eu.org/https://raw.githubusercontent.com/lalifeier/IPTV/main/m3u/huya.m3u"><i class="fas fa-list-ul"></i> lalifeier虎牙直播</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt" href="https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt"><i class="fas fa-list-ul"></i> Guovin</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv4.txt" href="https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv4.txt"><i class="fas fa-list-ul"></i> vbskycn</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/CCSH/IPTV/refs/heads/main/live.txt" href="https://raw.githubusercontent.com/CCSH/IPTV/refs/heads/main/live.txt"><i class="fas fa-list-ul"></i> CCSH_ALL</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/CCSH/IPTV/refs/heads/main/others.txt" href="https://raw.githubusercontent.com/CCSH/IPTV/refs/heads/main/others.txt"><i class="fas fa-list-ul"></i> CCSH_OTHER</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/zilong7728/Collect-IPTV/refs/heads/main/best_sorted.m3u" href="https://raw.githubusercontent.com/zilong7728/Collect-IPTV/refs/heads/main/best_sorted.m3u"><i class="fas fa-list-ul"></i> zilong7728</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/hujingguang/ChinaIPTV/refs/heads/main/cnTV_AutoUpdate.m3u8" href="https://raw.githubusercontent.com/hujingguang/ChinaIPTV/refs/heads/main/cnTV_AutoUpdate.m3u8"><i class="fas fa-list-ul"></i> ChinaIPTV</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u" href="https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u"><i class="fas fa-list-ul"></i> Guovin_v4</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv4.m3u" href="https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv4.m3u"><i class="fas fa-list-ul"></i> myIPTV_V4</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/Kimentanm/aptv/refs/heads/master/m3u/iptv.m3u" href="https://raw.githubusercontent.com/Kimentanm/aptv/refs/heads/master/m3u/iptv.m3u"><i class="fas fa-list-ul"></i> Kimentanm</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/zwc456baby/iptv_alive/refs/heads/master/live.m3u" href="https://raw.githubusercontent.com/zwc456baby/iptv_alive/refs/heads/master/live.m3u"><i class="fas fa-list-ul"></i> zwc456baby</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://live.zbds.org/tv/iptv4.m3u" href="https://live.zbds.org/tv/iptv4.m3u"><i class="fas fa-list-ul"></i> vbskycn_V4</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/Johnisonn/lives/refs/heads/main/live.m3u" href="https://raw.githubusercontent.com/Johnisonn/lives/refs/heads/main/live.m3u"><i class="fas fa-list-ul"></i> Johnisonn</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://iptv-org.github.io/iptv/categories/kids.m3u" href="https://iptv-org.github.io/iptv/categories/kids.m3u"><i class="fas fa-list-ul"></i> iptv-org_纯英儿童</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://iptv-org.github.io/iptv/languages/eng.m3u" href="https://iptv-org.github.io/iptv/languages/eng.m3u"><i class="fas fa-list-ul"></i> iptv-org_纯美英全集</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://iptv-org.github.io/iptv/categories/documentary.m3u" href="https://iptv-org.github.io/iptv/categories/documentary.m3u"><i class="fas fa-list-ul"></i> iptv-org_国际纪录片</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://iptv-org.github.io/iptv/categories/news.m3u" href="https://iptv-org.github.io/iptv/categories/news.m3u"><i class="fas fa-list-ul"></i> iptv-org_英文新闻</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/Free-TV/IPTV/master/playlists/playlist_kids.m3u" href="https://raw.githubusercontent.com/Free-TV/IPTV/master/playlists/playlist_kids.m3u"><i class="fas fa-list-ul"></i> FreeTV_全球儿童动画</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/Free-TV/IPTV/master/playlists/playlist_documentary.m3u" href="https://raw.githubusercontent.com/Free-TV/IPTV/master/playlists/playlist_documentary.m3u"><i class="fas fa-list-ul"></i> FreeTV_纪录片科学</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/Free-TV/IPTV/master/playlists/playlist_uk.m3u" href="https://raw.githubusercontent.com/Free-TV/IPTV/master/playlists/playlist_uk.m3u"><i class="fas fa-list-ul"></i> FreeTV_纯英综合包</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/YanG-1989/m3u/main/Migu.m3u" href="https://raw.githubusercontent.com/YanG-1989/m3u/main/Migu.m3u"><i class="fas fa-list-ul"></i> YanG_咪咕专线</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u" href="https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u"><i class="fas fa-list-ul"></i> YanG_全网大聚合</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u" href="https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u"><i class="fas fa-list-ul"></i> YueChan_全球精选</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u" href="https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u"><i class="fas fa-list-ul"></i> YueChan_主力综合</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://raw.githubusercontent.com/YueChan/Live/main/Radio.m3u" href="https://raw.githubusercontent.com/YueChan/Live/main/Radio.m3u"><i class="fas fa-list-ul"></i> YueChan_收音机</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://m3u.ibert.me/txt/cn.txt" href="https://m3u.ibert.me/txt/cn.txt"><i class="fas fa-list-ul"></i> ibert_国内全集</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://cyuan.netlify.app/tvbox/lives/18+/18+2023.txt" href="https://cyuan.netlify.app/tvbox/lives/18+/18+2023.txt"><i class="fas fa-list-ul"></i> 18+直播</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://cyuan.netlify.app/tvbox/lives/18+/18+千部独家传媒无水印来袭tvlist.txt" href="https://cyuan.netlify.app/tvbox/lives/18+/18+千部独家传媒无水印来袭tvlist.txt"><i class="fas fa-list-ul"></i> 18+直播2</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://cyuan.netlify.app/tvbox/lives/18+/18%F0%9F%88%B2%EF%B8%8F.txt" href="https://cyuan.netlify.app/tvbox/lives/18+/18%F0%9F%88%B2%EF%B8%8F.txt"><i class="fas fa-list-ul"></i> 18+直播3</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="bookmark">
+          <div class="bookmark-description">Peekpili 核心源</div>
+          <div class="bookmark-links source-links-block">
+            <div class="link-item">
+              <div class="app-name-btn source-btn" data-target="peekpili-src-box"><i class="fas fa-cubes"></i> Peekpili 专用多组数据源</div>
+              <div class="pan-links" id="peekpili-src-box">
+                <a class="pan-link-btn" target="_blank" data-link="https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json" href="https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json"><i class="fas fa-link"></i> 高天流云配置接口</a>
+                <a class="pan-link-btn" target="_blank" data-link="http://wexfnw:wexfnw@cat.xn--4kq62z5rby2qupq9ub.top/index.js.md5" href="http://wexfnw:wexfnw@cat.xn--4kq62z5rby2qupq9ub.top/index.js.md5"><i class="fas fa-link"></i> 魔力云播 猫爪接口 (主线)</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://wexfnw:wexfnw@cat.999888987.xyz/index.js.md5" href="http://wexfnw:wexfnw@cat.999888987.xyz/index.js.md5"><i class="fas fa-link"></i> 魔力云播 猫爪接口 (备用1)</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://wexfnw:wexfnw@cat.999888123.xyz/index.js.md5" href="http://wexfnw:wexfnw@cat.999888123.xyz/index.js.md5"><i class="fas fa-link"></i> 魔力云播 猫爪接口 (备用2)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://9280.kstore.vip/cat/index.js.md5" href="https://9280.kstore.vip/cat/index.js.md5"><i class="fas fa-link"></i> 魔力云播 PeekPili/JSTV 专用接口</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://gh-proxy.com/https://raw.githubusercontent.com/Darklessing/catvod/refs/heads/main/xuenai/index.js.md5" href="https://gh-proxy.com/https://raw.githubusercontent.com/Darklessing/catvod/refs/heads/main/xuenai/index.js.md5"><i class="fas fa-link"></i> 雪乃猫源 (多端通用)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://gh-proxy.org/https://raw.githubusercontent.com/4TVBox/Cat/refs/heads/main/index.js.md5" href="https://gh-proxy.org/https://raw.githubusercontent.com/4TVBox/Cat/refs/heads/main/index.js.md5"><i class="fas fa-link"></i> 沐辰猫源 (多端通用)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bookmark">
+          <div class="bookmark-description">蚂蚁影视 核心源</div>
+          <div class="bookmark-links source-links-block">
+            <div class="link-item">
+              <div class="app-name-btn source-btn" data-target="mays-src-box"><i class="fas fa-bug"></i> 蚂蚁定制聚合数据源</div>
+              <div class="pan-links" id="mays-src-box">
+                <a class="pan-link-btn" target="_blank" data-link="https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json" href="https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json"><i class="fas fa-link"></i> 高天流云配置接口</a>
+                <a class="pan-link-btn" target="_blank" data-link="http://wexfnw:wexfnw@cat.xn--4kq62z5rby2qupq9ub.top/index.js.md5" href="http://wexfnw:wexfnw@cat.xn--4kq62z5rby2qupq9ub.top/index.js.md5"><i class="fas fa-link"></i> 魔力云播 猫爪接口 (主线)</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://wexfnw:wexfnw@cat.999888987.xyz/index.js.md5" href="http://wexfnw:wexfnw@cat.999888987.xyz/index.js.md5"><i class="fas fa-link"></i> 魔力云播 猫爪接口 (备用1)</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://wexfnw:wexfnw@cat.999888123.xyz/index.js.md5" href="http://wexfnw:wexfnw@cat.999888123.xyz/index.js.md5"><i class="fas fa-link"></i> 魔力云播 猫爪接口 (备用2)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://9280.kstore.vip/cat/index.js.md5" href="https://9280.kstore.vip/cat/index.js.md5"><i class="fas fa-link"></i> 魔力云播 PeekPili/JSTV 专用接口</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://gh-proxy.com/https://raw.githubusercontent.com/Darklessing/catvod/refs/heads/main/xuenai/index.js.md5" href="https://gh-proxy.com/https://raw.githubusercontent.com/Darklessing/catvod/refs/heads/main/xuenai/index.js.md5"><i class="fas fa-link"></i> 雪乃猫源 (多端通用)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://gh-proxy.org/https://raw.githubusercontent.com/4TVBox/Cat/refs/heads/main/index.js.md5" href="https://gh-proxy.org/https://raw.githubusercontent.com/4TVBox/Cat/refs/heads/main/index.js.md5"><i class="fas fa-link"></i> 沐辰猫源 (多端通用)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bookmark">
+          <div class="bookmark-description">猫爪 核心源</div>
+          <div class="bookmark-links source-links-block">
+            <div class="link-item">
+              <div class="app-name-btn source-btn" data-target="mz-src-box"><i class="fas fa-paw"></i> 猫爪通配多分支源</div>
+              <div class="pan-links" id="mz-src-box">
+                <a class="pan-link-btn" target="_blank" data-link="https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json" href="https://gh-proxy.com/https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json"><i class="fas fa-link"></i> 高天流云配置接口</a>
+                <a class="pan-link-btn" target="_blank" data-link="http://wexfnw:wexfnw@cat.xn--4kq62z5rby2qupq9ub.top/index.js.md5" href="http://wexfnw:wexfnw@cat.xn--4kq62z5rby2qupq9ub.top/index.js.md5"><i class="fas fa-link"></i> 魔力云播 猫爪接口 (主线)</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://wexfnw:wexfnw@cat.999888987.xyz/index.js.md5" href="http://wexfnw:wexfnw@cat.999888987.xyz/index.js.md5"><i class="fas fa-link"></i> 魔力云播 猫爪接口 (备用1)</a>
+				<a class="pan-link-btn" target="_blank" data-link="http://wexfnw:wexfnw@cat.999888123.xyz/index.js.md5" href="http://wexfnw:wexfnw@cat.999888123.xyz/index.js.md5"><i class="fas fa-link"></i> 魔力云播 猫爪接口 (备用2)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://9280.kstore.vip/cat/index.js.md5" href="https://9280.kstore.vip/cat/index.js.md5"><i class="fas fa-link"></i> 魔力云播 PeekPili/JSTV 专用接口</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://gh-proxy.com/https://raw.githubusercontent.com/Darklessing/catvod/refs/heads/main/xuenai/index.js.md5" href="https://gh-proxy.com/https://raw.githubusercontent.com/Darklessing/catvod/refs/heads/main/xuenai/index.js.md5"><i class="fas fa-link"></i> 雪乃猫源 (多端通用)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://gh-proxy.org/https://raw.githubusercontent.com/4TVBox/Cat/refs/heads/main/index.js.md5" href="https://gh-proxy.org/https://raw.githubusercontent.com/4TVBox/Cat/refs/heads/main/index.js.md5"><i class="fas fa-link"></i> 沐辰猫源 (多端通用)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="bookmark">
+          <div class="bookmark-description">UZ影视 核心源</div>
+          <div class="bookmark-links source-links-block">
+            <div class="link-item">
+              <div class="app-name-btn source-btn" data-target="uzys-src-box"><i class="fas fa-shield-alt"></i> UZ专用秒播多端源</div>
+              <div class="pan-links" id="uzys-src-box">
+                <a class="pan-link-btn" target="_blank" data-link="" href=""><i class="fas fa-link"></i> 分享码：6666</a>
+                <a class="pan-link-btn" target="_blank" data-link="" href=""><i class="fas fa-link"></i> 分享码：1111</a>
+                <a class="pan-link-btn" target="_blank" data-link="" href=""><i class="fas fa-link"></i>  分享码：2222</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bookmark">
+          <div class="bookmark-description">洛雪-Music 核心源</div>
+          <div class="bookmark-links source-links-block">
+            <div class="link-item">
+              <div class="app-name-btn source-btn" data-target="lxm-src-box"><i class="fas fa-music"></i> LX六音全解析音乐源</div>
+              <div class="pan-links" id="lxm-src-box">
+				<a class="pan-link-btn" target="_blank" data-link="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/sixyin/latest.js" href="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/sixyin/latest.js"><i class="fas fa-headset"></i> SixYin (加速)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/huibq/latest.js" href="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/huibq/latest.js"><i class="fas fa-headset"></i> Huibq (加速)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/flower/latest.js" href="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/flower/latest.js"><i class="fas fa-headset"></i> Flower (加速)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/lx/latest.js" href="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/lx/latest.js"><i class="fas fa-headset"></i> LX (加速)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/ikun/latest.js" href="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/ikun/latest.js"><i class="fas fa-headset"></i> ikun (加速)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/grass/latest.js" href="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/grass/latest.js"><i class="fas fa-headset"></i> Grass (加速)</a>
+				<a class="pan-link-btn" target="_blank" data-link="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/juhe/latest.js" href="https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/juhe/latest.js"><i class="fas fa-headset"></i> JuheApi (加速)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bookmark">
+          <div class="bookmark-description">MusicFree 核心源</div>
+          <div class="bookmark-links source-links-block">
+            <div class="link-item">
+              <div class="app-name-btn source-btn" data-target="mf-src-box"><i class="fas fa-sliders-h"></i> MusicFree 音源插件合集</div>
+              <div class="pan-links" id="mf-src-box">
+                <a class="pan-link-btn" target="_blank" data-link="https://raw.gitcode.com/maotoumao/MusicFreePlugins/raw/master/plugins.json" href="https://raw.gitcode.com/maotoumao/MusicFreePlugins/raw/master/plugins.json"><i class="fas fa-link"></i> 官方</a><a class="pan-link-btn" target="_blank" data-link="https://fastly.jsdelivr.net/gh/Huibq/keep-alive/Music_Free/myPlugins.json" href="https://fastly.jsdelivr.net/gh/Huibq/keep-alive/Music_Free/myPlugins.json"><i class="fas fa-link"></i> 第三方</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -1567,120 +1035,78 @@
         const musicIcon = musicToggle.querySelector("i");
         const bgMusic = document.getElementById("bgMusic");
 
-        // 尝试自动播放音乐
-        function tryAutoPlay() {
-          bgMusic
-            .play()
-            .then(() => {
-              console.log("音乐自动播放成功");
-              musicIcon.classList.replace("fa-music", "fa-volume-up");
-              localStorage.setItem("music", "on");
-            })
-            .catch((e) => {
-              console.log("自动播放被阻止:", e);
-              // 如果自动播放失败，则等待用户交互
-              document.addEventListener(
-                "click",
-                function firstInteraction() {
-                  bgMusic.play();
-                  musicIcon.classList.replace("fa-music", "fa-volume-up");
-                  localStorage.setItem("music", "on");
-                  document.removeEventListener("click", firstInteraction);
-                },
-                { once: true },
-              );
-            });
-        }
-
-        // 检查本地存储的音乐设置
-        const savedMusic = localStorage.getItem("music");
-        if (savedMusic !== "off") {
-          //tryAutoPlay();
-        } else {
-          musicIcon.classList.replace("fa-volume-up", "fa-music");
-        }
-
-        // 切换音乐
         musicToggle.addEventListener("click", function () {
           if (bgMusic.paused) {
             bgMusic.play();
             musicIcon.classList.replace("fa-music", "fa-volume-up");
-            localStorage.setItem("music", "on");
           } else {
             bgMusic.pause();
             musicIcon.classList.replace("fa-volume-up", "fa-music");
-            localStorage.setItem("music", "off");
           }
         });
 
-        // ========== 新增功能：网盘链接展开/复制/Toast提示 ==========
         const toast = document.getElementById("toast");
         let currentOpenPan = null;
 
-        // 1. 软件名称点击 - 展开/收起网盘链接
+        // 名称点击逻辑（支持互斥开闭）
         const appNameBtns = document.querySelectorAll(".app-name-btn");
         appNameBtns.forEach((btn) => {
-          btn.addEventListener("click", function () {
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation(); 
             const targetId = this.getAttribute("data-target");
             const panLinks = document.getElementById(targetId);
 
-            // 关闭其他已展开的网盘链接
             if (currentOpenPan && currentOpenPan !== panLinks) {
               currentOpenPan.classList.remove("show");
             }
 
-            // 切换当前网盘链接的显示状态
             panLinks.classList.toggle("show");
-            currentOpenPan = panLinks.classList.contains("show")
-              ? panLinks
-              : null;
+            currentOpenPan = panLinks.classList.contains("show") ? panLinks : null;
           });
         });
 
-        // 2. 复制链接功能
+        // 核心剪贴板通用复制函数
+        async function copyToClipboard(text) {
+          try {
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(text);
+            } else {
+              let textArea = document.createElement("textarea");
+              textArea.value = text;
+              textArea.style.position = "fixed";
+              textArea.style.opacity = 0;
+              textArea.style.left = "0";
+              textArea.style.top = "0";
+              document.body.appendChild(textArea);
+              textArea.focus();
+              textArea.select();
+              await new Promise((res, rej) => {
+                document.execCommand("copy") ? res() : rej();
+                textArea.remove();
+              });
+            }
+            toast.textContent = "链接复制成功！";
+            toast.classList.add('show');
+            setTimeout(() => { toast.classList.remove('show'); }, 1500);
+          } catch (err) {
+            console.error("复制失败:", err);
+            toast.textContent = "复制失败，请手动复制！";
+            toast.classList.add("show");
+            setTimeout(() => { toast.classList.remove("show"); }, 1500);
+          }
+        }
+
+        // 子项点击处理：自动复制链接
         const panLinkBtns = document.querySelectorAll(".pan-link-btn");
         panLinkBtns.forEach((btn) => {
-          btn.addEventListener("click", async function () {
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation(); // 阻止面板意外关闭
             const link = this.getAttribute("data-link");
-            try {
-              if (navigator.clipboard && window.isSecureContext) {
-                // navigator clipboard 向剪贴板写文本
-                 await navigator.clipboard.writeText(link);
-              } else {
-                // 创建text area
-                let textArea = document.createElement("textarea");
-                textArea.value = link;
-                textArea.style.position = "fixed";
-                textArea.style.opacity = 0;
-                textArea.style.left = "0";
-                textArea.style.top = "0";
-                document.body.appendChild(textArea);
-                textArea.focus();
-                textArea.select();
-                await new Promise((res, rej) => {
-                  // 执行复制命令并移除文本框
-                  document.execCommand("copy") ? res() : rej();
-                  textArea.remove();
-                });
-              }
-              // // 显示Toast提示
-              toast.classList.add('show');
-              setTimeout(() => {
-                  toast.classList.remove('show');
-              }, 1500);
-            } catch (err) {
-              console.error("复制失败:", err);
-              toast.textContent = "复制失败，请手动复制！";
-              toast.classList.add("show");
-              setTimeout(() => {
-                toast.textContent = "链接复制成功！";
-                toast.classList.remove("show");
-              }, 1500);
-            }
+            copyToClipboard(link);
           });
         });
 
-        // 3. 点击空白处关闭网盘链接
+        // 点击空白处优雅关闭面板
         document.addEventListener("click", function (e) {
           if (!e.target.closest(".link-item")) {
             if (currentOpenPan) {
@@ -1690,6 +1116,142 @@
           }
         });
       });
+	  
+	  
+	document.addEventListener("DOMContentLoaded", function () {
+	  let currentOpenPan = null;
+	  let currentLinkedGroup = []; // 记录当前通过同行联动打开的面板组
+
+	  // --- 联动规则定义：将需要同步展开/关闭的面板 id 放在同一个数组里 ---
+	  const linkGroups = [
+		// 组 1：你的新需求 —— 蚂蚁定制聚合数据源、Peekpili专用源、猫爪通配源 完美同步联动
+		["mays-pan", "pkpl-pan", "mz-pan"],
+		
+		// 如果后续需要添加其他行的三列联动，可以继续按这种格式往下写：
+		["tvbox-hx-pan", "maccms-pan", "iptv-zb-pan"], 
+		["uzys-pan", "lxm-pan", "mf-pan"]
+	  ];
+
+	  // 辅助函数：根据一个 id 找出它所在的整行联动组
+	  function getLinkedIds(targetId) {
+		for (let group of linkGroups) {
+		  if (group.includes(targetId)) return group;
+		}
+		return null;
+	  }
+
+	  // 1. 主按钮点击事件 (支持单开与多列同步联动展开)
+	  const appNameBtns = document.querySelectorAll(".app-name-btn");
+	  appNameBtns.forEach((btn) => {
+		btn.addEventListener("click", function (e) {
+		  e.stopPropagation();
+		  const targetId = this.getAttribute("data-target");
+		  const targetPan = document.getElementById(targetId);
+		  if (!targetPan) return;
+
+		  // 检查当前点击的项是否属于“同步联动”组
+		  const linkedIds = getLinkedIds(targetId);
+
+		  if (linkedIds) {
+			// 【同行同步联动逻辑】
+			const isAlreadyShow = targetPan.classList.contains("show");
+
+			// 先关闭之前所有打开的面板
+			closeAllPanels();
+
+			// 如果之前不是展开状态，则将组内所有的具体源面板一并展开
+			if (!isAlreadyShow) {
+			  linkedIds.forEach(id => {
+				const pan = document.getElementById(id);
+				if (pan) {
+				  pan.classList.add("show");
+				  currentLinkedGroup.push(pan); // 缓存起来以便后续空白处点击时统一关闭
+				}
+			  });
+			  // 动态模糊背景
+			  document.body.classList.add("scrolled");
+			} else {
+			  // 如果已经是展开状态，再次点击任何一个，则全组同步收起
+			  document.body.classList.remove("scrolled");
+			}
+			currentOpenPan = null; // 清空单开变量
+
+		  } else {
+			// 【普通单开逻辑】如果未在 linkGroups 中定义，则点击时保持普通单个面板的开合
+			const isShow = targetPan.classList.contains("show");
+			closeAllPanels();
+
+			if (!isShow) {
+			  targetPan.classList.add("show");
+			  currentOpenPan = targetPan;
+			  document.body.classList.add("scrolled");
+			} else {
+			  document.body.classList.remove("scrolled");
+			}
+		  }
+		});
+	  });
+
+	  // 公共关闭所有面板的函数
+	  function closeAllPanels() {
+		if (currentOpenPan) {
+		  currentOpenPan.classList.remove("show");
+		  currentOpenPan = null;
+		}
+		if (currentLinkedGroup.length > 0) {
+		  currentLinkedGroup.forEach(pan => pan.classList.remove("show"));
+		  currentLinkedGroup = [];
+		}
+	  }
+
+	  // 2. 复制链接逻辑 (保持原有的高效安全复制)
+	  const copyToClipboard = async (text) => {
+		const toast = document.getElementById("toast");
+		try {
+		  if (navigator.clipboard && navigator.clipboard.writeText) {
+			await navigator.clipboard.writeText(text);
+		  } else {
+			const textArea = document.createElement("textarea");
+			textArea.value = text;
+			textArea.style.position = "fixed";
+			textArea.style.opacity = 0;
+			document.body.appendChild(textArea);
+			textArea.focus();
+			textArea.select();
+			await new Promise((res, rej) => {
+			  document.execCommand("copy") ? res() : rej();
+			  textArea.remove();
+			});
+		  }
+		  toast.textContent = "链接复制成功！";
+		  toast.classList.add('show');
+		  setTimeout(() => { toast.classList.remove('show'); }, 1500);
+		} catch (err) {
+		  toast.textContent = "复制失败，请手动复制！";
+		  toast.classList.add("show");
+		  setTimeout(() => { toast.classList.remove("show"); }, 1500);
+		}
+	  };
+
+	  // 子项小按钮点击自动复制
+	  document.querySelectorAll(".pan-link-btn").forEach((btn) => {
+		btn.addEventListener("click", function (e) {
+		  e.stopPropagation(); 
+		  const link = this.getAttribute("data-link");
+		  copyToClipboard(link);
+		});
+	  });
+
+	  // 3. 点击网页空白处优雅关闭所有打开的面板
+	  document.addEventListener("click", function (e) {
+		if (!e.target.closest(".link-item")) {
+		  closeAllPanels();
+		  if (window.scrollY < 50) {
+			document.body.classList.remove("scrolled");
+		  }
+		}
+	  });
+	});
     </script>
   </body>
 </html>
